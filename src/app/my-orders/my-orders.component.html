@@ -1,20 +1,20 @@
 <div class="my-orders">
-  <h1>Comenzile Mele</h1>
+  <h1>My Orders</h1>
   <div class="row">
     <div class="col-sm-2">
-      <span>Comenzi</span>
+      <span>Orders</span>
     </div>
     <div class="col-sm-2">
-      <span>ID Comandă</span>
+      <span>Order Id</span>
     </div>
     <div class="col-sm-2">
-      <span>Preț</span>
+      <span>Price</span>
     </div>
     <div class="col-sm-2">
-      <span>Stare</span>
+      <span>Status</span>
     </div>
     <div class="col-sm-2">
-      <span>Anulează Comanda</span>
+      <span>Cancel Order</span>
     </div>
   </div>
   <div class="row" *ngFor="let order of orderData">
@@ -25,13 +25,13 @@
       <span>#{{order.id}}</span>
     </div>
     <div class="col-sm-2">
-      <span>{{order.totalPrice}} lei</span>
+      <span>{{order.totalPrice}}</span>
     </div>
     <div class="col-sm-2">
-      <span>În Curs</span>
+      <span>In Progress</span>
     </div>
     <div class="col-sm-2">
-      <button class="form-button" (click)="cancelOrder(order.id)">Anulează Comanda</button>
+      <button class="form-button" (click)="cancelOrder(order.id)">Cancel Order</button>
     </div>
   </div>
 

@@ -1,6 +1,6 @@
 table{
   text-align: left;
-  color: green;
+  color: blueviolet;
   border-collapse: collapse;
 }
 img{
@@ -8,9 +8,9 @@ img{
   width: 100px;
 }
 table td , table th{
-  border: 1px solid green;
+  border: 1px solid blueviolet;
   padding: 10px;
-  min-width: 160pxs;
+  min-width: 160px;
 }
 .adjust-update-link{
   margin-left: 10px;

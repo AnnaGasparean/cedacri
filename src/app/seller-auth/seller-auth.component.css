@@ -4,10 +4,10 @@
 .sign-up h1, .login h1{
   margin-top: 50px;
   margin-bottom: 80px;
-  color: green;
+  color: blueviolet;
 }
 .auth-toggle-link{
-  color: green;
+  color: blueviolet;
   font-size: 14px;
   margin-top: 20px;
   text-align: left;

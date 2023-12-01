@@ -1,5 +1,5 @@
 <div class="add-product">
-  <h1>Adăugare Produse</h1>
+  <h1>Add New Product</h1>
   <p class="message-p">{{addProductMessage}}</p>
   <form #addProduct="ngForm"
         (ngSubmit)="submit(addProduct.value)"
@@ -7,35 +7,35 @@
     <input
       type="text"
       class="form-input"
-      placeholder="Introduceți Numele Produsului"
+      placeholder="Enter Product Name"
       name="name"
       ngModel
     />
     <input
       type="text"
       class="form-input"
-      placeholder="Introduceți Prețul Produsului"
+      placeholder="Enter Product Price"
       name="price"
       ngModel
     />
     <input
       type="text"
       class="form-input"
-      placeholder="Introduceți Categoria Produsului"
+      placeholder="Enter Product Category"
       name="category"
       ngModel
     />
     <input
       type="text"
       class="form-input"
-      placeholder="Introduceți Culoarea Produsului"
+      placeholder="Enter Product Color"
       name="color"
       ngModel
     />
     <textarea
       type="text"
       class="form-input"
-      placeholder="Introduceți Descripția Produsului"
+      placeholder="Enter Product Description"
       name="description"
       ngModel
     ></textarea>
@@ -43,11 +43,11 @@
     <input
       type="text"
       class="form-input"
-      placeholder="Introduceți URL-ul Imaginii Produsului"
+      placeholder="Enter Product Image URL"
       name="image"
       ngModel
     />
-    <button class="form-button">Adăugați Produsul</button>
+    <button class="form-button">Add Product</button>
 
   </form>
 </div>

@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './auth.guard';
 import { CartPageComponent } from './cart-page/cart-page.component';
 import { CheckoutComponent } from './checkout/checkout.component';
-import { HomeComponent } from './products/home.component';
 import { MyOrdersComponent } from './my-orders/my-orders.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { SearchComponent } from './search/search.component';
@@ -12,10 +11,11 @@ import { SellerAuthComponent } from './seller-auth/seller-auth.component';
 import { SellerHomeComponent } from './seller-home/seller-home.component';
 import { SellerUpdateProductComponent } from './seller-update-product/seller-update-product.component';
 import { UserAuthComponent } from './user-auth/user-auth.component';
+import {HomepageComponent} from "./home_page/homepage.component";
 
 const routes: Routes = [
   {
-    component: HomeComponent,
+    component: HomepageComponent,
     path: '',
   },
   {
@@ -43,7 +43,7 @@ const routes: Routes = [
     path:'details/:productId'
   },{
     component:UserAuthComponent,
-    path:'user-auth'
+    path:'register_login'
   },{
     component:CartPageComponent,
     path:'cart-page'
