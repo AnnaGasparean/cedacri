@@ -3,7 +3,7 @@ import { product } from '../data-type';
 import { ProductService } from '../services/product.service';
 import { faTrash, faEdit } from '@fortawesome/free-solid-svg-icons';
 @Component({
-  selector: 'app-seller-home',
+  selector: 'app-seller-products',
   templateUrl: './seller-home.component.html',
   styleUrls: ['./seller-home.component.css'],
 })

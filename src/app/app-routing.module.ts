@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './auth.guard';
 import { CartPageComponent } from './cart-page/cart-page.component';
 import { CheckoutComponent } from './checkout/checkout.component';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './products/home.component';
 import { MyOrdersComponent } from './my-orders/my-orders.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { SearchComponent } from './search/search.component';
@@ -24,7 +24,7 @@ const routes: Routes = [
   },
   {
     component:SellerHomeComponent,
-    path:'seller-home',
+    path:'seller-products',
     canActivate:[AuthGuard]
   },{
     component:SellerAddProductComponent,
