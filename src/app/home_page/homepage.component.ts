@@ -11,13 +11,7 @@ export class HomepageComponent implements OnInit {
 
   title = 'angular-project';
 
-  constructor(private router: Router) { }
-
   ngOnInit(): void {
   }
 
-  selectGender(gender: string): void {
-    console.log(`Redirecting to ${gender} page`);
-    this.router.navigate(['/products', gender]);
-}
 }

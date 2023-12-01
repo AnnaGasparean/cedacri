@@ -1,5 +1,5 @@
 import { HttpClientModule } from '@angular/common/http';
-import { NgModule } from '@angular/core';
+import {importProvidersFrom, NgModule} from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -21,6 +21,7 @@ import { CartPageComponent } from './cart-page/cart-page.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { MyOrdersComponent } from './my-orders/my-orders.component';
 import {HomepageComponent} from "./home_page/homepage.component";
+
 
 @NgModule({
   declarations: [
@@ -48,7 +49,7 @@ import {HomepageComponent} from "./home_page/homepage.component";
     FontAwesomeModule,
     NgbModule
   ],
-  providers: [],
+  providers: [importProvidersFrom(HttpClientModule)],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

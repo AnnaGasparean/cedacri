@@ -1,10 +1,48 @@
 /* header.component.css */
+.header {
+  background-color: #4C433B;
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-shop-name {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.header-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.header-menu li {
+  margin-right: 10px;
+}
+
+.header-menu a, .header-menu li {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.header-menu a:hover, .header-menu li:hover {
+  background-color: #555;
+}
 
 .nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #333;
+  background-color: #4C433B;
   padding: 10px;
   color: white;
 }
@@ -14,25 +52,75 @@
   text-decoration: none;
 }
 
-.nav-search {
+.header {
+  background-color: #4C433B;
+  color: #fff;
+  padding: 20px;
   display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 
-.nav-search input {
-  padding: 5px;
-  margin-right: 10px;
+.header-shop-name {
+  font-size: 25px;
+  font-weight: bold;
 }
 
-.suggested-search {
+.header-menu ul {
   list-style: none;
   padding: 0;
   margin: 0;
+  display: flex;
 }
 
-.suggested-search li {
-  margin: 5px 0;
+.header-menu li {
+  margin-right: 10px;
 }
+
+.header-menu a, .header-menu li {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.header-menu a:hover, .header-menu li:hover {
+  background-color: #555;
+}
+.search-bar {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.search-bar input {
+  padding: 8px;
+  font-size: 19px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+
+.search-bar button {
+  padding: 8px;
+  font-size: 16px;
+  background-color: #A08670;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.search-bar ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
 
 ul {
   list-style: none;

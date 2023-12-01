@@ -13,6 +13,7 @@ export class HeaderComponent implements OnInit {
   userName:string="";
   searchResult:undefined|product[];
   cartItems=0;
+  showSearch: boolean = false;
   constructor(private route: Router, private product:ProductService) {}
 
   ngOnInit(): void {
@@ -67,6 +68,11 @@ export class HeaderComponent implements OnInit {
       })
     }
   }
+
+  toggleSearch() {
+    this.showSearch = !this.showSearch;
+  }
+
   hideSearch(){
     this.searchResult=undefined
   }

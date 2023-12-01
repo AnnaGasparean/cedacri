@@ -1,16 +1,21 @@
 import { HttpClient } from '@angular/common/http';
 import { EventEmitter, Injectable } from '@angular/core';
 import { cart, order, product } from '../data-type';
+import {BehaviorSubject, Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProductService {
   cartData = new EventEmitter<product[] | []>();
-  constructor(private http: HttpClient) { }
+
+  constructor(private http: HttpClient) {
+  }
+
   addProduct(data: product) {
     return this.http.post('http://localhost:4200/products', data);
   }
+
   productList() {
     return this.http.get<product[]>('http://localhost:4200/products');
   }
@@ -29,6 +34,7 @@ export class ProductService {
       product
     );
   }
+
   popularProducts() {
     return this.http.get<product[]>('http://localhost:4200/products?_limit=3');
   }
@@ -70,6 +76,7 @@ export class ProductService {
   addToCart(cartData: cart) {
     return this.http.post('http://localhost:4200/cart', cartData);
   }
+
   getCartList(userId: number) {
     return this.http
       .get<product[]>('http://localhost:4200/cart?userId=' + userId, {
@@ -81,9 +88,11 @@ export class ProductService {
         }
       });
   }
+
   removeToCart(cartId: number) {
     return this.http.delete('http://localhost:4200/cart/' + cartId);
   }
+
   currentCart() {
     let userStore = localStorage.getItem('user');
     let userData = userStore && JSON.parse(userStore);
@@ -93,6 +102,7 @@ export class ProductService {
   orderNow(data: order) {
     return this.http.post('http://localhost:4200/orders', data);
   }
+
   orderList() {
     let userStore = localStorage.getItem('user');
     let userData = userStore && JSON.parse(userStore);
@@ -105,9 +115,8 @@ export class ProductService {
     })
   }
 
-  cancelOrder(orderId:number){
-    return this.http.delete('http://localhost:4200/orders/'+orderId)
+  cancelOrder(orderId: number) {
+    return this.http.delete('http://localhost:4200/orders/' + orderId)
 
   }
-
 }

@@ -16,8 +16,8 @@ export class ProductsComponent implements OnInit {
     this.product.popularProducts().subscribe((data)=> {
       this.popularProducts = data;
     })
-      this.product.trendyProducts().subscribe((data)=>{
-        this.trendyProducts=data;
-      })
+    this.product.trendyProducts().subscribe((data)=>{
+      this.trendyProducts=data;
+    })
   }
 }
