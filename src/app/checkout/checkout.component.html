@@ -2,36 +2,36 @@
   <h1>Checkout</h1>
   <div class="row">
     <div class="col-sm-7">
-      <h3>Adăugați adresa de livrare</h3>
+      <h3>Add shipping address</h3>
       <p class="message-p">{{orderMsg}}</p>
       <form #orderData="ngForm" class="common-form" (ngSubmit)="orderNow(orderData.value)">
         <input
           type="text"
           class="form-input"
           name="email"
-          placeholder="Scrieți Adresa de Email"
+          placeholder="Enter User Email"
           ngModel
         />
         <input
           type="text"
           class="form-input"
           name="address"
-          placeholder="Scrieți Adresa Locului de Livrare"
+          placeholder="Enter User Address"
           ngModel
         />
         <input
           type="text"
           class="form-input"
           name="contact"
-          placeholder="Scrieți Detaliile de Contact"
+          placeholder="Enter contact details"
           ngModel
         />
-        <button class="form-button">Comandă Acum</button>
+        <button class="form-button">Order Now</button>
       </form>
     </div>
     <div class="col-sm-5">
-      <h3>Prețul Total: {{totalPrice}}</h3>
-      <h4>Metoda de Plată : <b>Cash</b></h4>
+      <h3>Total Amount: {{totalPrice}}</h3>
+      <h4>Payment Method : <b>Pay on delivery</b></h4>
     </div>
   </div>
 </div>

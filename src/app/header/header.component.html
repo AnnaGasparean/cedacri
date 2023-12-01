@@ -1,10 +1,9 @@
 <nav class="nav">
-  <h1><a routerLink="">Magazin Online</a> </h1>
+  <h1><a routerLink="">Shopping Center</a> </h1>
   <div *ngIf="menuType!=='seller'" class="nav-search">
     <input type="text"
-           #searchInput
-           (keyup)="searchProduct($event)" (blur)="hideSearch()" placeholder="Căutare Produse" />
-    <button (click)="submitSearch(searchInput.value)" >Căutare</button>
+           #searchInput (keyup)="searchProduct($event)" (blur)="hideSearch()" placeholder="Search" />
+    <button (click)="submitSearch(searchInput.value)" >Search</button>
     <ul class="suggested-search" *ngIf="searchResult">
       <li *ngFor="let item of searchResult">
         <a (mousedown)="redirectToDetails(item.id)" >{{item.name}}</a>
@@ -13,24 +12,25 @@
   </div>
   <div [ngSwitch]="menuType">
     <ul *ngSwitchCase="'default'" >
-      <li><a routerLink="seller-auth">Vânzător</a></li>
-      <li><a routerLink="">Acasă</a></li>
-      <li><a routerLink="user-auth">Autentificare/Înregistrare</a></li>
-      <li><a href="#">Coș de Cumpărături({{cartItems}})</a></li>
+      <li><a routerLink="seller-auth">Seller</a></li>
+      <li><a routerLink="">Homepage</a></li>
+      <li><a routerLink="register_login" class="nav-button">Register/Login</a></li>
+
+      <li><a href="#">Cart({{cartItems}})</a></li>
     </ul>
     <ul *ngSwitchCase="'user'" >
-      <li><a routerLink="seller-auth">Vânzător</a></li>
-      <li><a routerLink="">Acasă</a></li>
+      <li><a routerLink="seller-auth">Seller</a></li>
+      <li><a routerLink="">Home</a></li>
       <li><a>{{userName | titlecase}}</a></li>
-      <li><a routerLink="my-orders" >Comenzile Mele</a></li>
-      <li><a (click)="userLogout()" >Delogare</a></li>
+      <li><a routerLink="my-orders" >My Orders</a></li>
+      <li><a (click)="userLogout()" >Logout</a></li>
 
-      <li><a [routerLink]="cartItems>0?'cart-page':null">Coș de Cumpărături({{cartItems}})</a></li>
+      <li><a [routerLink]="cartItems>0?'cart-page':null">Cart({{cartItems}})</a></li>
     </ul>
     <ul *ngSwitchCase="'seller'" >
-      <li><a routerLink="seller-add-product">Adăugare Produs</a></li>
-      <li><a routerLink="seller-home">Listă</a></li>
-      <li><a (click)="logout()">Delogare</a></li>
+      <li><a routerLink="seller-add-product">Add Product</a></li>
+      <li><a routerLink="seller-home">List</a></li>
+      <li><a (click)="logout()">Logout</a></li>
       <li><a href="#">{{sellerName | titlecase}}</a></li>
     </ul>
   </div>
