@@ -1,0 +1,37 @@
+<nav class="nav">
+  <h1><a routerLink="">Magazin Online</a> </h1>
+  <div *ngIf="menuType!=='seller'" class="nav-search">
+    <input type="text"
+           #searchInput
+           (keyup)="searchProduct($event)" (blur)="hideSearch()" placeholder="Căutare Produse" />
+    <button (click)="submitSearch(searchInput.value)" >Căutare</button>
+    <ul class="suggested-search" *ngIf="searchResult">
+      <li *ngFor="let item of searchResult">
+        <a (mousedown)="redirectToDetails(item.id)" >{{item.name}}</a>
+      </li>
+    </ul>
+  </div>
+  <div [ngSwitch]="menuType">
+    <ul *ngSwitchCase="'default'" >
+      <li><a routerLink="seller-auth">Vânzător</a></li>
+      <li><a routerLink="">Acasă</a></li>
+      <li><a routerLink="user-auth">Autentificare/Înregistrare</a></li>
+      <li><a href="#">Coș de Cumpărături({{cartItems}})</a></li>
+    </ul>
+    <ul *ngSwitchCase="'user'" >
+      <li><a routerLink="seller-auth">Vânzător</a></li>
+      <li><a routerLink="">Acasă</a></li>
+      <li><a>{{userName | titlecase}}</a></li>
+      <li><a routerLink="my-orders" >Comenzile Mele</a></li>
+      <li><a (click)="userLogout()" >Delogare</a></li>
+
+      <li><a [routerLink]="cartItems>0?'cart-page':null">Coș de Cumpărături({{cartItems}})</a></li>
+    </ul>
+    <ul *ngSwitchCase="'seller'" >
+      <li><a routerLink="seller-add-product">Adăugare Produs</a></li>
+      <li><a routerLink="seller-home">Listă</a></li>
+      <li><a (click)="logout()">Delogare</a></li>
+      <li><a href="#">{{sellerName | titlecase}}</a></li>
+    </ul>
+  </div>
+</nav>
