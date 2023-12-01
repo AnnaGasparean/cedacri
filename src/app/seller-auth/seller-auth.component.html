@@ -1,0 +1,54 @@
+<div class="seller-auth">
+  <div *ngIf="!showLogin" class="sign-up">
+    <h1>Înregistrare Vânzător</h1>
+    <form #sellerSignUp="ngForm" (ngSubmit)="signUp(sellerSignUp.value)" class="common-form">
+      <input
+        type="text"
+        class="form-input"
+        placeholder="Introduceți Numele"
+        name="name"
+        ngModel
+      />
+      <input
+        type="password"
+        class="form-input"
+        placeholder="Introduceți Parola"
+        name="password"
+        ngModel
+      />
+      <input
+        type="text"
+        class="form-input"
+        placeholder="Introduceți Email-ul"
+        name="email"
+        ngModel
+      />
+      <button class="form-button">Înregistrare</button>
+      <a class="auth-toggle-link" (click)="openLogin()">Deja aveți cont? Clic pentru autentificare</a>
+    </form>
+  </div>
+
+  <div *ngIf="showLogin" class="login">
+    <h1>Autentificare Vânzător</h1>
+    <p class="error-p">{{authError}}</p>
+    <form #sellerLogin="ngForm" (ngSubmit)="login(sellerLogin.value)" class="common-form">
+      <input
+        type="text"
+        class="form-input"
+        placeholder="Introduceți Email-ul"
+        name="email"
+        ngModel
+      />
+      <input
+        type="password"
+        class="form-input"
+        placeholder="Introduceți Parola"
+        name="password"
+        ngModel
+      />
+      <button class="form-button">Autentificare</button>
+      <a class="auth-toggle-link" (click)="openSignUp()">Nu aveți cont? Clic pentru înregistrare</a>
+
+    </form>
+  </div>
+</div>
