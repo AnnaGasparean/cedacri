@@ -48,12 +48,14 @@ export class HeaderComponent implements OnInit {
   logout(){
     localStorage.removeItem('seller');
     this.route.navigate(['/'])
+    this.cartItems=0;
   }
 
   userLogout(){
     localStorage.removeItem('user');
-    this.route.navigate(['/user-auth'])
+    this.route.navigate(['/register_login'])
     this.product.cartData.emit([])
+    this.cartItems=0;
   }
 
   searchProduct(query:KeyboardEvent){
@@ -81,7 +83,7 @@ export class HeaderComponent implements OnInit {
   }
   submitSearch(val:string){
     console.warn(val)
-    this.route.navigate([`search/${val}`]);
+    this.route.navigate([`/search/${val}`]);
   }
 }
 

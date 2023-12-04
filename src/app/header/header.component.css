@@ -1,4 +1,4 @@
-/* header.component.css */
+
 .header {
   background-color: #4C433B;
   color: #fff;
@@ -90,6 +90,7 @@
 .header-menu a:hover, .header-menu li:hover {
   background-color: #555;
 }
+
 .search-bar {
   display: flex;
   align-items: center;
@@ -117,10 +118,9 @@
 .search-bar ul {
   list-style: none;
   display: flex;
-  margin: 0;
-  padding: 0;
+  margin: 2px;
+  padding: 2px;
 }
-
 
 ul {
   list-style: none;

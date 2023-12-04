@@ -11,14 +11,9 @@ import { SellerAuthComponent } from './seller-auth/seller-auth.component';
 import { SellerHomeComponent } from './seller-home/seller-home.component';
 import { SellerUpdateProductComponent } from './seller-update-product/seller-update-product.component';
 import { UserAuthComponent } from './user-auth/user-auth.component';
-import {HomepageComponent} from "./home_page/homepage.component";
 import {ProductsComponent} from "./products/products.component";
 
 const routes: Routes = [
-  {
-    component: HomepageComponent,
-    path: '',
-  },
   {
     component: ProductsComponent,
     path: '',
@@ -29,7 +24,7 @@ const routes: Routes = [
   },
   {
     component:SellerHomeComponent,
-    path:'seller-products',
+    path:'seller-home',
     canActivate:[AuthGuard]
   },{
     component:SellerAddProductComponent,
