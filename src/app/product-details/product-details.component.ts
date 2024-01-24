@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import { cart, product } from '../data-type';
 import { ProductService } from '../services/product.service';
 
@@ -22,9 +22,10 @@ export class ProductDetailsComponent implements OnInit {
       this.productData= result;
       let cartData= localStorage.getItem('localCart');
       if(productId && cartData){
+        console.warn(productId);
         let items = JSON.parse(cartData);
         items = items.filter((item:product)=>productId=== item.id.toString());
-        this.removeCart = !items.length; //
+        this.removeCart = !!items.length; //
       }
 
       let user = localStorage.getItem('user');
@@ -58,16 +59,16 @@ export class ProductDetailsComponent implements OnInit {
         this.product.localAddToCart(this.productData);
         this.removeCart=true
       }else{
-        let user = localStorage.getItem('user');
-        let user_id= user && JSON.parse(user).id;
+        let user= localStorage.getItem('user');
+        let user_id = user && JSON.parse(user);
         let cartData:cart={
           ...this.productData,
-          product_id:this.productData.id, user_id
+          product_id: JSON.parse('{"id": '+this.productData.id+'}'), user_id: user_id
         }
        delete cartData.id;
         this.product.addToCart(cartData).subscribe((result)=>{
           if(result){
-            this.product.getCartList(user_id);
+            this.product.getCartList(user_id.id);
             this.removeCart=true
           }
         })

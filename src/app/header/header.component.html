@@ -5,10 +5,11 @@
       <ul *ngSwitchCase="'default'" >
         <li><a routerLink="seller-auth">Seller</a></li>
         <li><a routerLink="">Homepage</a></li>
+<!--        <li><a (click)=logout()>Homepage</a></li>-->
         <li><a routerLink="register_login" class="nav-button">Register/Login</a></li>
         <li><a *ngIf="menuType!=='seller'" (click)="toggleSearch()">Search</a></li>
 
-        <li><a routerLink="cart-page">Cart({{cartItems}})</a></li>
+        <li><a routerLink="cart-page" >Cart({{cartItems}})</a></li>
       </ul>
       <ul *ngSwitchCase="'user'" >
         <li><a routerLink="seller-auth">Seller</a></li>
@@ -24,7 +25,7 @@
         <li><a routerLink="seller-add-product">Add Product</a></li>
         <li><a routerLink="seller-home">List</a></li>
         <li><a (click)="logout()">Logout</a></li>
-        <li><a routerLink="/">{{sellerName | titlecase}}</a></li>
+        <li><a >{{sellerName | titlecase}}</a></li>
         <li><a *ngIf="menuType=='seller'" (click)="toggleSearch()">Search</a></li>
       </ul>
     </div>

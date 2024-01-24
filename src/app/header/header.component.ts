@@ -21,7 +21,7 @@ export class HeaderComponent implements OnInit {
       if (val.url) {
         if (localStorage.getItem('seller') && val.url.includes('seller')) {
           let sellerStore=localStorage.getItem('seller');
-          let sellerData =sellerStore && JSON.parse(sellerStore)[0];
+          let sellerData =sellerStore && JSON.parse(sellerStore);
           this.sellerName=sellerData.name;
           this.menuType = 'seller';
         }
@@ -39,22 +39,23 @@ export class HeaderComponent implements OnInit {
     });
     let cartData= localStorage.getItem('localCart');
     if(cartData){
-      this.cartItems= JSON.parse(cartData).length
+      this.cartItems= JSON.parse(cartData).length;
     }
     this.product.cartData.subscribe((items)=>{
-      this.cartItems= items.length
+      this.cartItems= items.length;
     })
   }
   logout(){
     localStorage.removeItem('seller');
-    this.route.navigate(['/'])
+    this.route.navigate(['/']);
+    this.product.cartData.emit([]);
     this.cartItems=0;
   }
 
   userLogout(){
     localStorage.removeItem('user');
-    this.route.navigate(['/register_login'])
-    this.product.cartData.emit([])
+    this.route.navigate(['/register_login']);
+    this.product.cartData.emit([]);
     this.cartItems=0;
   }
 
@@ -64,7 +65,7 @@ export class HeaderComponent implements OnInit {
       this.product.searchProduct(element.value).subscribe((result)=>{
 
         if(result.length>5){
-          result.length=length
+          result.length=length;
         }
         this.searchResult=result;
       })
@@ -76,14 +77,18 @@ export class HeaderComponent implements OnInit {
   }
 
   hideSearch(){
-    this.searchResult=undefined
+    this.searchResult=undefined;
   }
   redirectToDetails(id:number){
-    this.route.navigate(['/details/'+id])
+    this.route.navigate(['/details/'+id]);
   }
   submitSearch(val:string){
     console.warn(val)
     this.route.navigate([`/search/${val}`]);
+  }
+
+  clear(){
+    this.cartItems=0;
   }
 }
 

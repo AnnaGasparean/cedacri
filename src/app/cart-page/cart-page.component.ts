@@ -20,8 +20,7 @@ export class CartPageComponent implements OnInit {
   constructor(private product: ProductService, private router: Router) { }
 
   ngOnInit(): void {
-    this.loadDetails()
-
+    this.loadDetails();
   }
 
   removeToCart(cartId:number|undefined){
@@ -38,7 +37,7 @@ export class CartPageComponent implements OnInit {
       let price = 0;
       result.forEach((item) => {
         if (item.quantity) {
-          price = price + (+item.price * +item.quantity)
+          price = price + (item.price * item.quantity);//++
         }
       })
       this.priceSummary.price = price;

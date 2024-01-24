@@ -7,16 +7,22 @@ export class UserService {  invalidUserAuth = new EventEmitter<boolean>(false);
   userSignUp(user: signUp) {
     this.http.post('http://localhost:8080/users', user, { observe: 'response' })
       .subscribe((result) => {
-        if (result) {          localStorage.setItem('user', JSON.stringify(result.body));
-          this.router.navigate(['/']);}
-      });  }
+        if (result) {
+          localStorage.setItem('user', JSON.stringify(result.body));
+          this.router.navigate(['/']);
+        }
+      });
+  }
+
   userLogin(data: login) {
     this.http.get<signUp[]>(`http://localhost:8080/users?email=${data.email}&password=${data.password}`,
       { observe: 'response' })      .subscribe((result) => {
       if (result) {
         localStorage.setItem('user', JSON.stringify(result.body));
         this.router.navigate(['/']);        }
-    });  }
+    });
+  }
+
   userAuthReload() {
     if (localStorage.getItem('user')) {
       this.router.navigate(['/']);

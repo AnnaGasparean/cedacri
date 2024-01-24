@@ -49,7 +49,7 @@ export class UserAuthComponent implements OnInit {
       cartDataList.forEach((product:product, index)=>{
         let cartData:cart={
           ...product,
-          product_id:product.id,
+          product_id:product,
           user_id: user_id
         }
         delete cartData.id;
